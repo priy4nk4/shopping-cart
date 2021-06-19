@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from '../cart.service';
-
-const swal: SweetAlert = _swal as any;
-
+import { AlertModalComponent } from '../alert-modal/alert-modal.component';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +13,9 @@ export class CartComponent implements OnInit {
   @Input() cartItem!: any[];
   @Input() itemCounter!: number;
 
-  constructor(private activeModal: NgbActiveModal,private cart: CartService) { 
+  constructor(private activeModal: NgbActiveModal,
+    private cart: CartService,
+    private modalService:NgbModal) { 
   }
 
   ngOnInit(): void {
@@ -24,7 +23,7 @@ export class CartComponent implements OnInit {
 
   checkout(){
     this.activeModal.dismiss();
-    swal("Good job!", "You have succesfully placed the order!", "success");
+    this.modalService.open(AlertModalComponent);
     this.cart.clearCart();
     this.cart.itemCount.next(0);
   }

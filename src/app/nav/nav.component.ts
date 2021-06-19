@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from '../cart/cart.component';
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
+import { AlertModalComponent } from '../alert-modal/alert-modal.component';
 
 const swal: SweetAlert = _swal as any;
 
@@ -27,7 +28,10 @@ export class NavComponent implements OnInit {
   openCart(){
     let value = this.cart.getCartItem();
     if(!value.length){
-      swal("You have not selected any Items"); 
+      const modalRef = this.modalService.open(AlertModalComponent);
+      modalRef.componentInstance.emptyItem = true;
+      // modalRef.componentInstance.itemCounter = this.itemCounter;
+      // swal("You have not selected any Items"); 
     } else{
       const modalRef = this.modalService.open(CartComponent);
       modalRef.componentInstance.cartItem = value;

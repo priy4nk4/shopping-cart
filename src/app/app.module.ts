@@ -7,6 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { ItemsComponent } from './items/items.component';
 import { CartComponent } from './cart/cart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from './alert-modal/alert-modal.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavComponent,
     ItemsComponent,
     CartComponent,
+    AlertModalComponent,
   ],
   imports: [
     BrowserModule,
