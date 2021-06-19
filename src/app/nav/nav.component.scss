@@ -1,0 +1,35 @@
+.fixNav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    left: 0;
+    nav{
+        background-color: #29a12e;
+        .badge{
+            border-radius: 50%;
+            color: #29a12e;
+        }
+    }
+}
+
+.container-fluid{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+   
+    button{
+        background-color: #29a12e;
+        color: white;
+        border: 2px solid #29a12e;
+    }
+    button:hover{
+        background-color: #1a641c;
+        border: 2px solid#1a641c;
+    }
+    button:active{
+        background-color: #1a641c;
+        border: 2px solid#1a641c;
+    }
+
+}

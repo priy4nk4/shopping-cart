@@ -1,0 +1,23 @@
+<div class="card" *ngIf ="cartItem.length">
+    <div class="card-body">
+        <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">no of Items</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let i of cartItem">
+              <tr>
+                <td>{{i.first}}</td>
+                <td>{{i.last}}</td>
+                <td>{{i.count}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer" *ngIf="cartItem.length">
+    <button type="button" class="btn-cart" (click)="checkout()">Check out</button>
+</div>
